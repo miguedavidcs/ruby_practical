@@ -1,0 +1,5 @@
+<!-- app/views/products/show.html.erb -->
+
+<h1 class="title"><%= @products.title %></h1>
+<p class="description"><%= @products.description %></p>
+<p class="price"><%= number_to_currency(@products.price) %></p>

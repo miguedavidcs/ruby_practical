@@ -1,0 +1,53 @@
+# PostgreSQL. Versions 9.3 and up are supported.
+#
+# Install the pg driver:
+#   gem install pg
+# On macOS with Homebrew:
+# C:\Program Files\PostgreSQL\16\bin
+#   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
+#   gem install pg -- --with-pg-config="C:\Program Files\PostgreSQL\16\bin\pg_config.exe"
+
+# On Windows:
+#   gem install pg
+#       Choose the win32 build.
+#       Install PostgreSQL and put its /bin directory on your path.
+#
+# Configure Using Gemfile
+# gem "pg"
+#
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: vendelo_development
+  pool: 5
+  host: localhost
+  username: postgres
+  password: 8888
+  port: 5432
+  authentication_method: scram-sha-256
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: vendelo_name_test
+  pool: 5
+  username: postgres
+  password: 8888
+
+staging:
+  url: <%= ENV['DATABASE_URL'] %>
+
+production:
+  <<: *default
+  database: vendelo_production
+  username: vendelo
+  password: <%= ENV["VENDELO_DATABASE_PASSWORD"] %>
+  port: 5432
+  authentication_method: scram-sha-256

@@ -1,0 +1,29 @@
+# one.yml
+one:
+  title: Laptop
+  description: Powerful laptop with high-performance features.
+  price: 999.99
+
+# two.yml
+two:
+  title: Smartphone
+  description: Feature-rich smartphone with a sleek design.
+  price: 499.99
+
+# three.yml
+three:
+  title: Headphones
+  description: High-quality headphones for an immersive audio experience.
+  price: 99.99
+
+# four.yml
+four:
+  title: Smartwatch
+  description: Stay connected with this stylish and smart wearable device.
+  price: 149.99
+
+# five.yml
+five:
+  title: Camera
+  description: Capture moments with this advanced digital camera.
+  price: 799.99
